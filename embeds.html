@@ -10,4 +10,26 @@
 <iframe allow='encrypted-media' width='640' height='360' marginwidth='0' marginheight='0' scrolling='no' frameborder='0' allowfullscreen='yes' src='https://newdmn.icu/stream/87178.html'></iframe>
 <iframe allow='encrypted-media' width='640' height='360' marginwidth='0' marginheight='0' scrolling='no' frameborder='0' allowfullscreen='yes' src='https://newdmn.icu/stream/2/87178.html'></iframe>
 <iframe allow='encrypted-media' width='640' height='360' marginwidth='0' marginheight='0' scrolling='no' frameborder='0' allowfullscreen='yes' src='https://newdmn.icu/stream/3/87178.html'></iframe>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body style="margin:0px;padding:0px;">
+<div id="oper"></div>
+<div id="ppp"></div>
+<script>
+var id = "fox";
+var status = "fs2";
+var playerElement = document.getElementById("ppp");
+var player = new Clappr.Player({
+source: '1.m3u8',
+ height: "100%",
+ width: "100%",
+parentId: "#ppp",
+plugins: {'core': [LevelSelector]},
+mimeType: "application/x-mpegURL",
+autoPlay: false,
+});
+</script>
+	
 </body></html>
