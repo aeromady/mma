@@ -2,5 +2,27 @@
 <html>
 <h1>Embeds</h1>
 	<iframe src='https://www' width='640' height='480' scrolling='yes' frameborder='0' allowfullscreen allowtransparency referrerpolicy='unsafe-url'></iframe>
-
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video"></video>
+<script>
+  if(Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource('https://d2z33e00h1sqcn.cloudfront.net/lixve/admin/7b7552bb-330e-4f24-81ad-d36f9b7b5596/primary/2000000/index.m3u8');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
+ // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+ // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+ // This is using the built-in support of the plain video element, without using hls.js.
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = 'https://d2z33e00h1sqcn.cloudfront.net/lixve/admin/7b7552bb-330e-4f24-81ad-d36f9b7b5596/primary/2000000/index.m3u8';
+    video.addEventListener('canplay',function() {
+      video.play();
+    });
+  }
+</script>
 </html>
+
